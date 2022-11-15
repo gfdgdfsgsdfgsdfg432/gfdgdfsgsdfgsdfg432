@@ -10,7 +10,7 @@ local vector3d = require("vector3d")
 local imgui = require('imgui')
 local imgui = require'imgui'
 
-script_version('9.0.0')
+script_version('15.0.0')
 requests = require 'requests'
 encoding = require("encoding"); encoding.default = 'CP1251'; u8 = encoding.UTF8  
 
@@ -806,7 +806,7 @@ imgui.BeginGroup()
 	
         if imgui.ImageButton(image71, (imgui.ImVec2(250, 50))) then
 		
-		if input.v == "1488" then
+		if input.v == "1b738" then
 setAudioStreamState(audio1, ab.PLAY)
                 main_window.v = not main_window.v
                 status = true
