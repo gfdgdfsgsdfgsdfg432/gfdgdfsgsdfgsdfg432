@@ -7,7 +7,7 @@ function main()
 	sampAddChatMessage('.....Sam0g0nwik....')
 	local RAW = 'https://raw.githubusercontent.com/gfdgdfsgsdfgsdfg432/gfdgdfsgsdfgsdfg432/main/ubdate.ini' -- RAW обновы
 	local r = requests.get(RAW) 
-	if r.status_code == 200 then -- проверяем status code RAW'a
+		if r.status_code == 200 then -- проверяем status code RAW'a
 		local func,err = load('return '..r.text) -- преобразуем текст в RAW в lua массив
 		if err == nil then -- если нет ошибки
 			if thisScript().version ~= func().version then -- если версия скрипта не совпадает в обновлении
