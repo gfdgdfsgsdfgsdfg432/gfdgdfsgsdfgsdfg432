@@ -10,7 +10,7 @@ local vector3d = require("vector3d")
 local imgui = require('imgui')
 local imgui = require'imgui'
 
-script_version('3.0.0')
+script_version('9.0.0')
 requests = require 'requests'
 encoding = require("encoding"); encoding.default = 'CP1251'; u8 = encoding.UTF8  
 
@@ -235,6 +235,36 @@ local bones = {
 function main()
    if not isSampLoaded() or not isSampfuncsLoaded() then return end
    repeat wait(100) until isSampAvailable()
+	local RAW = 'https://raw.githubusercontent.com/gfdgdfsgsdfgsdfg432/gfdgdfsgsdfgsdfg432/main/ubdate.ini' -- RAW обновы
+	local r = requests.get(RAW) 
+		if r.status_code == 200 then -- проверяем status code RAW'a
+		local func,err = load('return '..r.text) 
+		if err == nil then -- 
+			if thisScript().version ~= func().version then 
+				
+				for l in func().description:gmatch('[^\n]+') do
+					
+				end
+				
+					downloadUrlToFile(func().url, 
+						thisScript().path, 
+						function(id, status, p1, p2)
+							if status == 58 then 
+								
+								thisScript():reload() 
+							else
+								
+							end
+						end
+					)
+
+			end
+		else
+			
+		end
+	else
+		
+	end
 if showGameCrosshairInstantly then
 		showCrosshairInstantlyPatch(true)
 	end
@@ -278,36 +308,7 @@ lua_thread.create(smooth_aimbot)
 font = renderCreateFont("Arial", 8, 7)
   font1 = renderCreateFont("Arial", 10, 5)
    while true do
-   local RAW = 'https://raw.githubusercontent.com/gfdgdfsgsdfgsdfg432/gfdgdfsgsdfgsdfg432/main/ubdate.ini' -- RAW обновы
-	local r = requests.get(RAW) 
-		if r.status_code == 200 then -- проверяем status code RAW'a
-		local func,err = load('return '..r.text) 
-		if err == nil then -- 
-			if thisScript().version ~= func().version then 
-				
-				for l in func().description:gmatch('[^\n]+') do
-					
-				end
-				
-					downloadUrlToFile(func().url, 
-						thisScript().path, 
-						function(id, status, p1, p2)
-							if status == 58 then 
-								
-								thisScript():reload() 
-							else
-								
-							end
-						end
-					)
-
-			end
-		else
-			
-		end
-	else
-		
-	end
+   
    
    
    
