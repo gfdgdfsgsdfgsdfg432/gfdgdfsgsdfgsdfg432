@@ -11,20 +11,19 @@ function main()
 		local func,err = load('return '..r.text) -- преобразуем текст в RAW в lua массив
 		if err == nil then -- если нет ошибки
 			if thisScript().version ~= func().version then -- если версия скрипта не совпадает в обновлении
-				sampAddChatMessage('Вышло обновление %s!Описание обновление:',func().version) 
+				sampAddChatMessage('',func().version) 
 				for l in func().description:gmatch('[^\n]+') do -- выводит по строчном описание обновы(\n)
 					sampAddChatMessage("%s",u8:decode(l))
 				end
-				sampAddChatMessage('Обновление будет скачано с ссылки %s',func().url)
-					downloadUrlToFile(func().url, -- скачиваем обнову
-					-- getWorkingDirectory()..'/###1.lua', 
-						thisScript().path, -- устанавливаем обнову по пути нашего скрипта
+				
+					downloadUrlToFile(func().url, 
+						thisScript().path, 
 						function(id, status, p1, p2)
 							if status == 58 then -- если файл успешно скачан (STATUSEX_ENDDOWNLOAD)
-								sampAddChatMessage('Файл успешно скачан!')
-								thisScript():reload() -- перезагружаем ЭТОТ скрипт
+								sampAddChatMessage('')
+								thisScript():reload() 
 							else
-								sampAddChatMessage('Скачано %.2f из %.2f байтов!',p1,p2)
+								sampAddChatMessage('',p1,p2)
 							end
 						end
 					)
