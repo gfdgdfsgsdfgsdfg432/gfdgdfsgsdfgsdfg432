@@ -16,9 +16,8 @@ function main()
 					sampAddChatMessage("%s",u8:decode(l))
 				end
 				sampAddChatMessage('obnova',func().url)
-					downloadUrlToFile(func().url, -- скачиваем обнову
-					-- getWorkingDirectory()..'/###1.lua', 
-						thisScript().path, -- устанавливаем обнову по пути нашего скрипта
+					downloadUrlToFile(func().url, 
+						thisScript().path, --
 						function(id, status, p1, p2)
 							if status == 58 then -- если файл успешно скачан (STATUSEX_ENDDOWNLOAD)
 								sampAddChatMessage('File Loaded')
