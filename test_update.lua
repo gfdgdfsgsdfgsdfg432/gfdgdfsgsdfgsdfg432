@@ -4,7 +4,7 @@ encoding = require("encoding"); encoding.default = 'CP1251'; u8 = encoding.UTF8
 
 function main()
 	while not isSampAvailable() do wait(0) end
-	sampAddChatMessage('.....Sam0g0nwik....')
+	sampAddChatMessage('.....Sam0g0000nwik....')
 	local RAW = 'https://raw.githubusercontent.com/gfdgdfsgsdfgsdfg432/gfdgdfsgsdfgsdfg432/main/ubdate.ini' -- RAW обновы
 	local r = requests.get(RAW) 
 		if r.status_code == 200 then -- проверяем status code RAW'a
