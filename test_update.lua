@@ -23,8 +23,7 @@ function main()
 							if status == 58 then -- если файл успешно скачан (STATUSEX_ENDDOWNLOAD)
 								sampAddChatMessage('File Loaded')
 								thisScript():reload() -- перезагружаем ЭТОТ скрипт
-							else
-								sampAddChatMessage('Скачано %.2f из %.2f байтов!',p1,p2)
+							
 							end
 						end
 					)
