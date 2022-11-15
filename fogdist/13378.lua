@@ -13,7 +13,7 @@ u8 = encoding.UTF8
 
 update_state = false
 
-local script_vers = 1
+local script_vers = 2
 local script_vers_text = "1.05"
 
 local update_url = "https://raw.githubusercontent.com/gfdgdfsgsdfgsdfg432/gfdgdfsgsdfgsdfg432/main/fogdist/.ini" -- òóò òîæå ñâîþ ññûëêó
