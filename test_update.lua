@@ -1,4 +1,4 @@
-script_version('1.0.0')
+script_version('3.0.0')
 requests = require 'requests'
 encoding = require("encoding"); encoding.default = 'CP1251'; u8 = encoding.UTF8  
 
